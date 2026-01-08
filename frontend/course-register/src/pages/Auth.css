@@ -1,0 +1,83 @@
+/* Page background */
+.auth-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0d6efd, #3f8cff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Card */
+.auth-card {
+  background: #ffffff;
+  width: 360px;
+  padding: 30px 28px;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+  text-align: center;
+}
+
+/* University title */
+.university-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0d6efd;
+  margin-bottom: 10px;
+}
+
+/* Page heading */
+.auth-heading {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Inputs */
+.auth-input {
+  width: 100%;
+  padding: 11px;
+  margin-bottom: 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  outline: none;
+}
+
+.auth-input:focus {
+  border-color: #0d6efd;
+}
+
+/* Button */
+.auth-btn {
+  width: 100%;
+  padding: 11px;
+  background: #0d6efd;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.auth-btn:hover {
+  background: #0b5ed7;
+}
+
+/* Switch text */
+.auth-switch {
+  margin-top: 16px;
+  font-size: 13px;
+  color: #555;
+}
+
+.auth-link {
+  color: #0d6efd;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.auth-link:hover {
+  text-decoration: underline;
+}

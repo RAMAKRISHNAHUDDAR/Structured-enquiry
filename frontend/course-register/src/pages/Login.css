@@ -1,0 +1,114 @@
+/* Full page split layout */
+.login-page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* LEFT WHITE SIDE */
+.login-left {
+  position: relative;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+
+.login-logo {
+  width: 350px;
+  margin-bottom: 20px;
+  z-index: 2;
+
+  opacity: 0;
+  animation: fadeInLogo 1.2s ease-out forwards;
+  animation-delay: 0.6s;
+}
+
+.login-university {
+  font-size: 20px;
+  font-weight: 600;
+  color: #0d6efd;
+  text-align: center;
+}
+
+/* RIGHT BLUE SIDE */
+.login-right {
+  background: linear-gradient(135deg, #0d6efd, #3f8cff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  clip-path: ellipse(85% 100% at 100% 50%);
+}
+
+
+
+/* LOGIN CARD */
+.login-card {
+  background: #ffffff;
+  width: 360px;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.login-title {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* INPUTS */
+.login-input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 14px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+/* BUTTON */
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: #0d6efd;
+  color: #ffffff;
+  font-size: 15px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.login-btn:hover {
+  background: #0b5ed7;
+}
+
+/* LINK */
+.login-link {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.login-link a {
+  color: #0d6efd;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+
+@keyframes fadeInLogo {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

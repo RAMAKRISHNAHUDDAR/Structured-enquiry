@@ -1,0 +1,458 @@
+/* ===== DASHBOARD LAYOUT ===== */
+
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ===== SIDEBAR ===== */
+
+.dashboard-sidebar {
+  width: 260px; /* ⬅ more breathing space */
+  background: #0d6efd;
+  color: #ffffff;
+  padding: 30px 20px;
+
+  border-top-right-radius: 24px;
+  border-bottom-right-radius: 24px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+.sidebar-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.dashboard-sidebar button {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+
+  padding: 14px 16px;
+  text-align: left;
+  font-size: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+
+  outline: none;
+  transition: background 0.2s ease;
+}
+
+/* Hover only */
+.dashboard-sidebar button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* 🔥 FIX: keep visible after click */
+.dashboard-sidebar button:focus,
+.dashboard-sidebar button:active {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  outline: none;
+}
+
+
+/* Logout */
+.logout-btn {
+  margin-top: auto;
+  background: #dc3545 !important;
+  text-align: center !important;
+}
+
+.logout-btn:hover {
+  background: #bb2d3b !important;
+}
+
+/* ===== MAIN CONTENT ===== */
+
+.dashboard-main {
+  flex: 1;
+  background: #f8f9fa;
+  padding: 40px;
+
+  /* 🔥 Fade-in effect */
+  opacity: 0;
+  animation: fadeInDashboard 1.2s ease-out forwards;
+animation-delay: 0.6;
+
+}
+
+
+
+.dashboard-heading {
+  margin-bottom: 25px;
+  color: #333;
+}
+
+/* Summary cards */
+.summary-container {
+  display: flex;
+  gap: 20px;
+}
+
+.summary-box {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  min-width: 180px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.summary-box h3 {
+  font-size: 14px;
+  color: #555;
+}
+
+.summary-box p {
+  font-size: 26px;
+  font-weight: 600;
+  color: #0d6efd;
+}
+
+
+/* Summary section */
+.summary-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.summary-box {
+  width: 45%;
+  background: #f5f8ff;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.summary-box h3 {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.summary-box p {
+  font-size: 24px;
+  font-weight: 600;
+  color: #0d6efd;
+}
+
+/* Buttons */
+.dashboard-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dashboard-btn {
+  padding: 11px;
+  border-radius: 8px;
+  border: none;
+  background: #0d6efd;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.dashboard-btn:hover {
+  background: #0b5ed7;
+}
+
+/* Logout button */
+.dashboard-btn.logout {
+  background: #dc3545;
+}
+
+.dashboard-btn.logout:hover {
+  background: #bb2d3b;
+}
+
+
+/* ===== Profile Page Grid ===== */
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.profile-box {
+  background: #f5f8ff;
+  padding: 18px 12px;
+  border-radius: 12px;
+  text-align: center;
+  min-height: 110px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.profile-box h4 {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.profile-box p {
+  font-size: 16px;
+  font-weight: 600;
+  color: #0d6efd;
+  word-break: break-word;
+}
+
+/* ===== My Courses Page ===== */
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.course-card {
+  background: #f5f8ff;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid #e0e8ff;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.course-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(13, 110, 253, 0.15);
+}
+
+.course-code {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0d6efd;
+  margin-bottom: 8px;
+}
+
+.course-name {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.course-credits {
+  font-size: 13px;
+  color: #666;
+  font-weight: 500;
+}
+
+/* ===== Register Courses Page ===== */
+
+.register-courses-card {
+  width: 500px;
+  max-width: 90vw;
+}
+
+.course-input-section {
+  margin-bottom: 20px;
+}
+
+.course-list-section {
+  margin-top: 25px;
+  margin-bottom: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #e0e8ff;
+}
+
+.course-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 5px;
+}
+
+.course-list-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: #f5f8ff;
+  border-radius: 8px;
+  border: 1px solid #e0e8ff;
+}
+
+.course-list-code {
+  font-weight: 700;
+  color: #0d6efd;
+  min-width: 100px;
+  font-size: 14px;
+}
+
+.course-list-name {
+  flex: 1;
+  color: #333;
+  font-size: 14px;
+}
+
+.course-list-credits {
+  color: #666;
+  font-size: 13px;
+  font-weight: 500;
+  min-width: 70px;
+  text-align: right;
+}
+
+.register-actions {
+  margin-top: 20px;
+}
+
+.dashboard-info {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.dashboard-list {
+  margin-left: 20px;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.dashboard-list li {
+  margin-bottom: 8px;
+}
+
+.dashboard-note {
+  background: #e9f2ff;
+  padding: 15px;
+  border-left: 4px solid #0d6efd;
+  border-radius: 6px;
+  color: #333;
+  max-width: 600px;
+}
+
+@keyframes fadeInDashboard {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ===== PROFILE PAGE LAYOUT ===== */
+
+.profile-wrapper {
+  background: #ffffff;
+  max-width: 900px;          /* ⬅ limits full width */
+  margin: 0 auto;            /* ⬅ centers content */
+  padding: 35px 40px;
+  border-radius: 16px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Adjust grid spacing inside profile */
+.profile-wrapper .profile-grid {
+  margin-top: 25px;
+}
+
+
+/* ===== MY COURSES PAGE ===== */
+
+.courses-wrapper {
+  background: #ffffff;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 35px 40px;
+  border-radius: 16px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Academic table style */
+.courses-table {
+  margin-top: 25px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.courses-header,
+.courses-row {
+  display: grid;
+  grid-template-columns: 1.5fr 3fr 1fr 1.5fr;
+  padding: 14px 16px;
+  align-items: center;
+}
+
+.courses-header {
+  background: #0d6efd;
+  color: white;
+  font-weight: 600;
+}
+
+.courses-row {
+  background: #f8f9fa;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.courses-row:nth-child(even) {
+  background: #eef3ff;
+}
+
+/* ===== FADE IN EFFECT (SAME AS PROFILE) ===== */
+
+.fade-in {
+  opacity: 0;
+  animation: fadeInDashboard 1.1s ease-out forwards;
+}
+
+.small-btn {
+  margin-right: 6px;
+  padding: 6px 10px;
+  font-size: 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #0d6efd;
+  color: white;
+}
+
+.small-btn.danger {
+  background: #dc3545;
+}
+
+
+.summary-container {
+  display: flex;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.summary-box {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  min-width: 180px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.summary-box p {
+  font-size: 26px;
+  font-weight: 600;
+  color: #0d6efd;
+}
+
+
