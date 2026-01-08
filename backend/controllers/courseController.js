@@ -4,13 +4,11 @@ const Student = require("../models/Student");
 // CREATE COURSE
 const createCourse = async (req, res) => {
   try {
-    const { courseCode, courseName, semester, credits, department } = req.body;
+    const { courseCode, courseName, credits } = req.body;
 
-
-    if (!courseCode || !courseName || !semester || !credits || !department) {
-  return res.status(400).json({ message: "All fields are required" });
-}
-
+    if (!courseCode || !courseName || credits === undefined) {
+      return res.status(400).json({ message: "All fields are required" });
+    }
 
     const exists = await Course.findOne({ courseCode });
     if (exists) {
@@ -18,13 +16,12 @@ const createCourse = async (req, res) => {
     }
 
     const course = await Course.create({
-  courseCode,
-  courseName,
-  semester,
-  credits,
-  department,
-});
-
+      courseCode,
+      courseName,
+      credits,
+      semester: req.student.semester,
+      department: req.student.department,
+    });
 
     res.status(201).json({
       message: "Course created successfully",

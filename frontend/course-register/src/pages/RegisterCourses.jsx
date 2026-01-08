@@ -21,20 +21,29 @@ function RegisterCourses() {
 
   // ADD or UPDATE course
   const addOrUpdateCourse = () => {
-    if (!course.courseCode || !course.courseName || !course.credits) {
-      alert("All fields are required");
+    if (
+      course.courseCode.trim() === "" ||
+      course.courseName.trim() === "" ||
+      course.credits === "" ||
+      Number(course.credits) <= 0
+    ) {
+      alert("Please enter valid course details");
       return;
     }
 
+    const preparedCourse = {
+      courseCode: course.courseCode.trim(),
+      courseName: course.courseName.trim(),
+      credits: Number(course.credits),
+    };
+
     if (editIndex !== null) {
-      // Update existing course
       const updatedList = [...courseList];
-      updatedList[editIndex] = course;
+      updatedList[editIndex] = preparedCourse;
       setCourseList(updatedList);
       setEditIndex(null);
     } else {
-      // Add new course
-      setCourseList([...courseList, course]);
+      setCourseList([...courseList, preparedCourse]);
     }
 
     setCourse({ courseCode: "", courseName: "", credits: "" });
@@ -60,11 +69,11 @@ function RegisterCourses() {
     }
 
     try {
-      for (const c of courseList) {
+      for (let c of courseList) {
         const createRes = await API.post("/courses/create", {
           courseCode: c.courseCode,
           courseName: c.courseName,
-          credits: Number(c.credits),
+          credits: c.credits,
         });
 
         await API.post("/courses/register", {
@@ -81,8 +90,6 @@ function RegisterCourses() {
 
   return (
     <div className="dashboard-layout">
-
-      {/* SIDEBAR */}
       <aside className="dashboard-sidebar">
         <h2 className="sidebar-title">KLE University</h2>
 
@@ -101,13 +108,10 @@ function RegisterCourses() {
         </button>
       </aside>
 
-      {/* MAIN CONTENT */}
       <main className="dashboard-main">
         <div className="courses-wrapper fade-in">
-
           <h1 className="dashboard-heading">Register Courses</h1>
 
-          {/* FORM */}
           <div className="register-form">
             <input
               className="login-input"
@@ -139,7 +143,6 @@ function RegisterCourses() {
             </button>
           </div>
 
-          {/* REVIEW LIST */}
           {courseList.length > 0 && (
             <div className="courses-table">
               <div className="courses-header">
@@ -175,7 +178,6 @@ function RegisterCourses() {
             </div>
           )}
 
-          {/* FINAL SUBMIT */}
           <button
             className="login-btn"
             style={{ marginTop: "20px" }}
@@ -183,10 +185,8 @@ function RegisterCourses() {
           >
             Submit Registration
           </button>
-
         </div>
       </main>
-
     </div>
   );
 }
