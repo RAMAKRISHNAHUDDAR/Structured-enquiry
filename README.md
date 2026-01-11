@@ -46,7 +46,5 @@ Students can register, log in, add courses, register for multiple courses, and v
 - View **total credits**
 - View all registered courses in a clean academic format
 
----
 
-## 📂 Project Structure
 
