@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  backend:
+    build: ./backend
+    container_name: backend
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGO_URI=mongodb+srv://user_ram:Userram%40007@universitycluster.gfu4g1l.mongodb.net/?appName=universityCluster
+      - JWT_SECRET=BJPpartyzindabad
+
+  frontend:
+    build: ./frontend/course-register
+    container_name: frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend

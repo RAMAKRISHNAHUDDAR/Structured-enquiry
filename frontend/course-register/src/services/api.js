@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://course-registration-qoao.onrender.com/api",
+  baseURL: "http://backend:5000/api",
 });
 
 // Add Authorization header to all requests if token exists
