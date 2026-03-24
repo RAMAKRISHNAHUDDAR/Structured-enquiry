@@ -7,8 +7,8 @@ services:
     ports:
       - "5000:5000"
     environment:
-      - MONGO_URI=mongodb+srv://user_ram:Userram%40007@universitycluster.gfu4g1l.mongodb.net/?appName=universityCluster
-      - JWT_SECRET=BJPpartyzindabad
+      - MONGO_URI=${MONGO_URI}
+      - JWT_SECRET=B${JWT_SECRET}
 
   frontend:
     build: ./frontend/course-register
